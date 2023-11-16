@@ -1,6 +1,6 @@
 # SRID Starter Code 
 
-This code is written for the Fall 2023 Recitation for CMU's course: 18659 - Software Requirements & Interaction Design. This code will be used for the hands-on demo during the recitation session. ([Slides Here.](https://docs.google.com/presentation/d/13THbqFKk8UN3tv0Cx4gYjIgT5fPDfYP9reTJesZ5EzU/edit?usp=sharing 
+This code is written for the Fall 2023 Recitation for CMU's course: 18658 - Software Requirements & Interaction Design. This code will be used for the hands-on demo during the recitation session. ([Slides Here.](https://docs.google.com/presentation/d/13THbqFKk8UN3tv0Cx4gYjIgT5fPDfYP9reTJesZ5EzU/edit?usp=sharing 
 ))
 
 We will be attempting to implement [this Figma Prototype:](https://www.figma.com/file/OEZPp3BOKRW2d8xV4yFBQy/Untitled?type=design&node-id=0%3A1&mode=design&t=PUOS9D33g798pmSZ-1)
