@@ -14,30 +14,23 @@ import TodoList from "./components/TodoList";
 // 6. Persist and read state from local storage
 
 function App() {
-    const [items, setItems] = useState([
-        {
-            checked: false,
-            description: "Learn React",
-        },
-        {
-            checked: false,
-            description: "Buy some coffee",
-        },
-        {
-            checked: true,
-            description: "Go for a walk",
-        },
-    ]);
+    const [items, setItems] = useState(localStorage.getItem("items") || []);
+
+    const updateLocalStorage = (items) => {
+        localStorage.setItem("items", JSON.stringify(items));
+    };
 
     const handleCheck = (index, state) => {
         const newItems = [...items];
         newItems[index].checked = state;
         setItems(newItems);
+        updateLocalStorage(newItems);
     };
 
     const addTask = (task) => {
         const newItems = [...items, { checked: false, description: task }];
         setItems(newItems);
+        updateLocalStorage(newItems);
     };
 
     const pendingItems = items
