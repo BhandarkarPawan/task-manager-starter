@@ -2,11 +2,12 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import React, { useState } from 'react';
 
-function TodoItem({checked, description}) {
+function TodoItem({checked, description, handleCheck, idx}) {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChange = (event) => {
     setIsChecked(event.target.checked);
+    handleCheck(idx, event.target.checked);
   };
 
   return (

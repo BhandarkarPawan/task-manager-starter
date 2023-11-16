@@ -30,8 +30,19 @@ function App() {
         },
     ]);
 
-    const pendingItems = items.filter((item) => !item.checked);
-    const completedItems = items.filter((item) => item.checked);
+    const handleCheck = (index, state) => {
+        const newItems = [...items];
+        newItems[index].checked = state;
+        setItems(newItems);
+    };
+
+    const pendingItems = items
+        .map((item, index) => ({ ...item, index }))
+        .filter((item) => !item.checked);
+
+    const completedItems = items
+        .map((item, index) => ({ ...item, index }))
+        .filter((item) => item.checked);
 
     return (
         <div className="App">
@@ -43,7 +54,7 @@ function App() {
             >
                 Pending
             </Typography>
-            <TodoList items={pendingItems} />
+            <TodoList items={pendingItems} handleCheck={handleCheck} />
             <Typography
                 variant="h6"
                 gutterBottom
@@ -51,7 +62,7 @@ function App() {
             >
                 Completed
             </Typography>
-            <TodoList items={completedItems} />
+            <TodoList items={completedItems} handleCheck={handleCheck} />
         </div>
     );
 }

@@ -3,11 +3,11 @@ import ListItem from '@mui/material/ListItem';
 import TodoItem from './TodoItem';
 
 
-const TodoList = ({items}) => {
+const TodoList = ({items, handleCheck}) => {
     return <List >
         {items.map((item) => (
-            <ListItem>
-                <TodoItem checked={item.checked} description={item.description} />
+            <ListItem key={item.index}>
+                <TodoItem checked={item.checked} description={item.description} handleCheck={handleCheck} idx={item.index} />
             </ListItem>
         ))}
   </List>
