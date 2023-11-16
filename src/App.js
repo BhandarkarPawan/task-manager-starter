@@ -1,6 +1,7 @@
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import "./App.css";
+import AddTaskModal from "./components/AddTaskModal";
 import Header from "./components/Header";
 import TodoList from "./components/TodoList";
 
@@ -36,6 +37,11 @@ function App() {
         setItems(newItems);
     };
 
+    const addTask = (task) => {
+        const newItems = [...items, { checked: false, description: task }];
+        setItems(newItems);
+    };
+
     const pendingItems = items
         .map((item, index) => ({ ...item, index }))
         .filter((item) => !item.checked);
@@ -63,6 +69,7 @@ function App() {
                 Completed
             </Typography>
             <TodoList items={completedItems} handleCheck={handleCheck} />
+            <AddTaskModal addTask={addTask} />
         </div>
     );
 }
