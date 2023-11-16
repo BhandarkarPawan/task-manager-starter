@@ -22,7 +22,7 @@ const AddTaskModal = ({addTask}) => {
 
   return (
     <div>
-      <Button onClick={handleOpen} variant="contained" className="bg-green-500 active:bg-green-400 hover:bg-green-400">Add Task</Button>
+      <Button onClick={handleOpen} variant="contained" color="success">Add Task</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -45,8 +45,9 @@ const AddTaskModal = ({addTask}) => {
                 onChange={(e) => setTaskName(e.target.value)}
             />
             <Button 
-                variant="contained" 
-                className="self-end bg-green-500 active:bg-green-400 hover:bg-green-400"
+                variant="contained"
+                color="success" 
+                className="self-end"
                 onClick={handleAdd}
             >
                 Add
